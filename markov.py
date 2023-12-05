@@ -10,9 +10,10 @@ def open_and_read_file(file_path):
     the file's contents as one string of text.
     """
 
-    # your code goes here
+    string = open("green-eggs.txt").read()
+    
 
-    return 'Contents of your file as one long string'
+    return string
 
 
 def make_chains(text_string):
@@ -42,9 +43,46 @@ def make_chains(text_string):
 
     chains = {}
 
-    # your code goes here
+    list_of_words = text_string.split()
 
-    return chains
+    word_list =[]
+
+    for i in range(len(list_of_words)-2): 
+        tuple_of_list = (list_of_words[i],list_of_words[i+1])
+        value_of_list = list_of_words[i+2]
+
+        if tuple_of_list not in chains: 
+            chains[tuple_of_list] = [value_of_list]
+
+        else:
+            chains[tuple_of_list].append(value_of_list)
+
+    print(chains)
+
+
+        #assess 
+    #     if chains.get()
+    #     chains[(list_of_words[i],list_of_words[i+1])] = [list_of_words[i+2]] #think of this as labeling empty tupperware
+    # print(chains)
+
+    #tuple created
+    #access the value with i+2
+    #if the key isn't in the dictionary, you'll create it and append
+    #if already in dict, you'll append the value
+
+    
+
+
+
+    # print(word_list)
+
+    #set the tuple pairs as keys, and then values will be each following word
+
+
+    #logic to check if the key: value pair is in- can use.get()
+
+
+    return word_list
 
 
 def make_text(chains):
@@ -69,3 +107,7 @@ chains = make_chains(input_text)
 random_text = make_text(chains)
 
 print(random_text)
+
+# print(open_and_read_file("green-eggs.txt"))
+
+print(make_chains(open_and_read_file("green-eggs.txt")))
