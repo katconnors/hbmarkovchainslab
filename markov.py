@@ -70,16 +70,6 @@ def make_chains(text_string):
     #if the key isn't in the dictionary, you'll create it and append
     #if already in dict, you'll append the value
 
-    
-
-
-
-    # print(word_list)
-
-    #set the tuple pairs as keys, and then values will be each following word
-
-
-    #logic to check if the key: value pair is in- can use.get()
 
 
     return word_list
